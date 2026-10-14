@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pesquisa local de referências e passagens bíblicas.">
+  <title>Bíblia-Pesquisa</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="biblia-data.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <p class="eyebrow">CONSULTA BÍBLICA LOCAL</p>
+      <h1>Bíblia-Pesquisa</h1>
+      <p class="intro">Encontre uma referência, procure palavras e leia cada passagem no contexto.</p>
+    </header>
+
+    <section class="search-panel" aria-label="Pesquisa">
+      <form id="search-form">
+        <label for="query">Referência, frase ou palavras-chave</label>
+        <div class="search-row">
+          <input id="query" name="query" type="search" autocomplete="off"
+            placeholder="Ex.: João 3:16, Salmos 23 ou não temas" required>
+          <button type="submit">Pesquisar</button>
+        </div>
+        <p class="hint">Use vírgulas para procurar qualquer uma de várias palavras-chave.</p>
+      </form>
+      <div class="examples" aria-label="Exemplos de pesquisa">
+        <button type="button" class="example" data-query="João 3:16">João 3:16</button>
+        <button type="button" class="example" data-query="Salmos 23">Salmos 23</button>
+        <button type="button" class="example" data-query="Romanos 8:28-39">Romanos 8:28-39</button>
+        <button type="button" class="example" data-query="não temas">“não temas”</button>
+      </div>
+    </section>
+
+    <p id="data-notice" class="notice" role="status"></p>
+    <section class="results-section" aria-live="polite">
+      <div class="results-heading">
+        <h2 id="results-title">Comece uma pesquisa</h2>
+        <p id="results-summary"></p>
+      </div>
+      <div id="results" class="results"></div>
+      <button id="show-more" class="show-more" type="button" hidden>Mostrar mais resultados</button>
+    </section>
+
+    <footer>
+      <p>Pesquisa local sobre o texto disponível no projeto. Um trecho incompleto é identificado no resultado.</p>
+    </footer>
+  </main>
+</body>
+</html>
